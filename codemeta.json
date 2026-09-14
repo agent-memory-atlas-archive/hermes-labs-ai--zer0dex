@@ -1,0 +1,17 @@
+{
+  "@context": "https://w3id.org/codemeta/3.1",
+  "@type": "SoftwareSourceCode",
+  "name": "zer0dex",
+  "description": "Developer-preview local memory for AI agents: a readable markdown index paired with semantic retrieval from a local vector store, for long-running agents that need recall without forcing every detail into the prompt.",
+  "codeRepository": "https://github.com/hermes-labs-ai/zer0dex",
+  "version": "0.1.1",
+  "license": "https://spdx.org/licenses/Apache-2.0",
+  "programmingLanguage": "Python",
+  "runtimePlatform": "Python >=3.11",
+  "identifier": [
+    "https://pypi.org/project/zer0dex/0.1.1/"
+  ],
+  "author": [{"@type": "Person", "givenName": "Rolando", "familyName": "Bosch Rodriguez", "identifier": "https://orcid.org/0009-0005-4896-1112"}],
+  "url": "https://pypi.org/project/zer0dex/",
+  "keywords": ["agent-memory", "persistent-memory", "local-first", "rag", "memory", "vector-store"]
+}
