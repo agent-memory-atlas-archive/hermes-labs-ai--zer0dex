@@ -15,6 +15,16 @@ changes during the 0.1.x line. See the [compatibility policy](https://github.com
 
 ![zer0dex preview](https://raw.githubusercontent.com/hermes-labs-ai/zer0dex/v0.1.1/assets/preview.png)
 
+```bash
+pip install zer0dex
+```
+
+That installs the CLI and local server. [First success](#first-success) below
+walks through the Ollama models and commands a working setup needs; the
+[CLI](https://github.com/hermes-labs-ai/zer0dex/blob/v0.1.1/docs/cli.md) and
+[HTTP API](https://github.com/hermes-labs-ai/zer0dex/blob/v0.1.1/docs/http.md)
+references cover every command and endpoint.
+
 ## Who needs it
 
 `zer0dex` is for agent and framework developers who:
