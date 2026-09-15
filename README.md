@@ -25,6 +25,39 @@ walks through the Ollama models and commands a working setup needs; the
 [HTTP API](https://github.com/hermes-labs-ai/zer0dex/blob/v0.1.1/docs/http.md)
 references cover every command and endpoint.
 
+## Quicklook (no Ollama required)
+
+[First success](#first-success) needs Ollama and two local models. Before
+installing those, here is what the two layers look like without running
+anything.
+
+A `zer0dex` memory index is a plain markdown file you write or edit by hand:
+
+```markdown
+# Memory
+## Project Atlas
+- Deployment target: staging
+- Owner: platform-team
+- Last incident: 2026-08-02, rolled back within 12m
+```
+
+Example output (illustrative, no Ollama required to read this — shape of a
+`zer0dex query` response once the local server and models from
+[First success](#first-success) are running):
+
+```
+$ zer0dex query "Where does Project Atlas deploy?"
+{
+  "memories": [
+    {
+      "text": "Deployment target: staging",
+      "score": 0.87,
+      "source": "MEMORY.md#project-atlas"
+    }
+  ]
+}
+```
+
 ## Who needs it
 
 `zer0dex` is for agent and framework developers who:
@@ -172,3 +205,10 @@ Apache-2.0. zer0dex uses [mem0](https://mem0.ai/) for the memory abstraction,
 
 zer0dex is maintained by [Hermes Labs](https://hermes-labs.ai/), an AI reliability
 engineering studio for teams shipping production agents and LLM applications.
+
+## Also from Hermes Labs
+
+- [lintlang](https://github.com/hermes-labs-ai/lintlang) — Static analysis for AI agent configs, tool descriptions, and system prompts; catches vague tool descriptions, missing stop conditions, and schema gaps before they reach runtime.
+- [little-canary](https://github.com/hermes-labs-ai/little-canary) — Detects prompt injection by its effect on a sacrificial canary model, not just pattern matching.
+- [fidelis](https://github.com/hermes-labs-ai/fidelis) — Zero-LLM agent memory for Claude Code and AI agents: local-first BM25, dense-vector, and reciprocal-rank-fusion retrieval.
+- [quick-gate-js](https://github.com/hermes-labs-ai/quick-gate-js) — Deterministic JS/TS CI quality gate that unifies ESLint, TypeScript, build, and Lighthouse checks into one fail-fast result.
