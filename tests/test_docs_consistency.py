@@ -28,3 +28,12 @@ def test_codemeta_version_matches_pyproject():
     pyproject_version = _pyproject_version()
     codemeta = json.loads((REPO_ROOT / "codemeta.json").read_text())
     assert codemeta["version"] == pyproject_version
+
+
+def test_runtime_and_citation_versions_match_pyproject():
+    pyproject_version = _pyproject_version()
+    init_text = (REPO_ROOT / "src" / "zer0dex" / "__init__.py").read_text()
+    citation_text = (REPO_ROOT / "CITATION.cff").read_text()
+
+    assert re.search(rf'^__version__ = "{re.escape(pyproject_version)}"$', init_text, re.M)
+    assert re.search(rf'^version: "{re.escape(pyproject_version)}"$', citation_text, re.M)

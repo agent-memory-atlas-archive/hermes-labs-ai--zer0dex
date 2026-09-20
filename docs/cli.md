@@ -64,8 +64,10 @@ zer0dex add TEXT [--port PORT]
   stop is a successful no-op.
 - `status`, `query`, and `add` require a running local server. They exit 1
   when it cannot be reached. `query` exits 0 with `No relevant memories found.`
-  when the server returns an empty result set. `query --limit` requires a
-  positive integer; invalid values are rejected by the CLI before any request.
+  when the server returns an empty result set. `add` exits 1 when the server
+  reports that extraction stored zero memories, and prints guidance to check,
+  query, or rephrase the text. `query --limit` requires a positive integer;
+  invalid values are rejected by the CLI before any request.
 
 The defaults are collection `zer0dex`, user ID `agent`, port `18420`, storage
 `.zer0dex`, Ollama URL `http://localhost:11434`, embedding model

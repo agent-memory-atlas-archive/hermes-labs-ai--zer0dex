@@ -2,6 +2,32 @@
 
 All notable changes to zer0dex are documented here.
 
+## [0.1.2] - Unreleased
+
+### Added
+- `zer0dex --version` prints the installed package version without starting a
+  server, opening a store, or contacting the network.
+
+### Fixed
+- `zer0dex add` no longer reports a successful add when the server extracts
+  zero memories. It exits nonzero and explains how to check, query, or
+  rephrase the text.
+- Machine-readable project metadata and the README release links align with
+  the 0.1.2 package version.
+
+### Changed
+- CI builds the source and wheel distributions, validates them, and smoke-tests
+  the installed wheel's CLI outside the checkout.
+
+### Compatibility
+- Additive within the 0.1.x developer-preview line: no existing command,
+  configuration key, or HTTP route changed shape.
+
+### Evidence boundary
+- This preparation records the changes already merged to `main`; it does not
+  create a tag, publish a package, or make a hosted-operation or
+  production-readiness claim.
+
 ## [0.1.1] - 2026-09-09
 
 ### Added
