@@ -1,8 +1,7 @@
 name: Publish to PyPI
 
-# Fires when you publish a GitHub Release. That same Release also triggers
-# Zenodo DOI minting (if the repo is toggled on in Zenodo) — so one action
-# (publish a Release) mints the DOI AND ships to PyPI, both green.
+# Fires when you publish a GitHub Release and publishes the package to PyPI.
+# Zenodo DOI minting is not a dependency of this workflow or its PyPI publish.
 
 on:
   release:

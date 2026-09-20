@@ -7,13 +7,13 @@ retrieval from a local vector store.
 [![PyPI version](https://img.shields.io/pypi/v/zer0dex)](https://pypi.org/project/zer0dex/)
 [![Python](https://img.shields.io/pypi/pyversions/zer0dex)](https://pypi.org/project/zer0dex/)
 [![CI](https://github.com/hermes-labs-ai/zer0dex/actions/workflows/ci.yml/badge.svg)](https://github.com/hermes-labs-ai/zer0dex/actions/workflows/ci.yml)
-[![License](https://img.shields.io/pypi/l/zer0dex)](https://github.com/hermes-labs-ai/zer0dex/blob/v0.1.1/LICENSE)
+[![License](https://img.shields.io/pypi/l/zer0dex)](https://github.com/hermes-labs-ai/zer0dex/blob/v0.1.2/LICENSE)
 
-**0.1.1 continues the 0.1.x developer-preview line.** The project remains
+**0.1.2 continues the 0.1.x developer-preview line.** The project remains
 Alpha: expect refinement, but migration notes will precede documented breaking
-changes during the 0.1.x line. See the [compatibility policy](https://github.com/hermes-labs-ai/zer0dex/blob/v0.1.1/docs/compatibility.md).
+changes during the 0.1.x line. See the [compatibility policy](https://github.com/hermes-labs-ai/zer0dex/blob/v0.1.2/docs/compatibility.md).
 
-![zer0dex preview](https://raw.githubusercontent.com/hermes-labs-ai/zer0dex/v0.1.1/assets/preview.png)
+![zer0dex preview](https://raw.githubusercontent.com/hermes-labs-ai/zer0dex/v0.1.2/assets/preview.png)
 
 ```bash
 pip install zer0dex
@@ -21,8 +21,8 @@ pip install zer0dex
 
 That installs the CLI and local server. [First success](#first-success) below
 walks through the Ollama models and commands a working setup needs; the
-[CLI](https://github.com/hermes-labs-ai/zer0dex/blob/v0.1.1/docs/cli.md) and
-[HTTP API](https://github.com/hermes-labs-ai/zer0dex/blob/v0.1.1/docs/http.md)
+[CLI](https://github.com/hermes-labs-ai/zer0dex/blob/v0.1.2/docs/cli.md) and
+[HTTP API](https://github.com/hermes-labs-ai/zer0dex/blob/v0.1.2/docs/http.md)
 references cover every command and endpoint.
 
 ## Quicklook (no Ollama required)
@@ -121,7 +121,9 @@ directory. Background starts also record their project-local process state as
 `server.json` in the configured storage directory; use `zer0dex stop` to stop
 that managed server. It will refuse to signal a PID unless the server proves
 its per-launch identity, so stale or reused state cannot stop an unrelated
-process.
+process. `zer0dex add` exits nonzero when extraction stores no memories and
+suggests checking, querying, or rephrasing the text rather than reporting a
+successful add.
 
 ## Integration surface
 
@@ -131,7 +133,7 @@ and trust policy. The server also exposes `POST /add` and `GET /health`.
 
 For a TypeScript host, the repository includes a small adapter that adds a
 bounded, fail-open lookup before dispatching a model call:
-[hook_example.ts](https://github.com/hermes-labs-ai/zer0dex/blob/v0.1.1/src/zer0dex/hook_example.ts).
+[hook_example.ts](https://github.com/hermes-labs-ai/zer0dex/blob/v0.1.2/src/zer0dex/hook_example.ts).
 Copy the `queryZer0dex` helper into your message pipeline and keep the returned
 memories in an explicitly untrusted context field. The example is deliberately
 an adapter rather than an automatic hook installer, so the host retains control
@@ -140,10 +142,10 @@ over when retrieved text enters a prompt.
 Exact commands, options, response fields, errors, and compatibility promises
 live in the reference documentation:
 
-- [CLI reference](https://github.com/hermes-labs-ai/zer0dex/blob/v0.1.1/docs/cli.md)
-- [HTTP API reference](https://github.com/hermes-labs-ai/zer0dex/blob/v0.1.1/docs/http.md)
-- [Compatibility and migration policy](https://github.com/hermes-labs-ai/zer0dex/blob/v0.1.1/docs/compatibility.md)
-- [Evaluation methodology, results, and limitations](https://github.com/hermes-labs-ai/zer0dex/blob/v0.1.1/eval/README.md)
+- [CLI reference](https://github.com/hermes-labs-ai/zer0dex/blob/v0.1.2/docs/cli.md)
+- [HTTP API reference](https://github.com/hermes-labs-ai/zer0dex/blob/v0.1.2/docs/http.md)
+- [Compatibility and migration policy](https://github.com/hermes-labs-ai/zer0dex/blob/v0.1.2/docs/compatibility.md)
+- [Evaluation methodology, results, and limitations](https://github.com/hermes-labs-ai/zer0dex/blob/v0.1.2/eval/README.md)
 
 ## Evidence and limits
 
@@ -182,9 +184,9 @@ pip install -e ".[dev]"
 python -m pytest tests/ -q
 ```
 
-See [CONTRIBUTING.md](https://github.com/hermes-labs-ai/zer0dex/blob/v0.1.1/CONTRIBUTING.md)
+See [CONTRIBUTING.md](https://github.com/hermes-labs-ai/zer0dex/blob/v0.1.2/CONTRIBUTING.md)
 for contribution guidance and the
-[changelog](https://github.com/hermes-labs-ai/zer0dex/blob/v0.1.1/CHANGELOG.md)
+[changelog](https://github.com/hermes-labs-ai/zer0dex/blob/v0.1.2/CHANGELOG.md)
 for release history.
 
 ## Citation
