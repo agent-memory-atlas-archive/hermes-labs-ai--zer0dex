@@ -14,8 +14,8 @@ def _pyproject_version() -> str:
 def test_llms_txt_version_matches_pyproject():
     pyproject_version = _pyproject_version()
     llms_text = (REPO_ROOT / "llms.txt").read_text()
-    match = re.search(r"Version (\d+\.\d+\.\d+) is the first", llms_text)
-    assert match, "llms.txt is missing the expected 'Version X.Y.Z is the first' line"
+    match = re.search(r"Version (\d+\.\d+\.\d+) continues", llms_text)
+    assert match, "llms.txt is missing the expected 'Version X.Y.Z continues' line"
     assert match.group(1) == pyproject_version, (
         f"llms.txt declares version {match.group(1)!r} but pyproject.toml "
         f"declares {pyproject_version!r}"
